@@ -5,6 +5,7 @@ body {
 	margin: 20px 20px 40px 40px;
 	padding: 0;
 	text-align: left;
+	max-width: 800px;
 }
 a {
 	text-decoration : none;
