@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>qLabel: Example - Tour dates</title>
+  <link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre" rel="stylesheet" type="text/css"/>
+  <link href="../../lib/jquery.uls/css/jquery.uls.css" rel="stylesheet"/>
+  <link href="../../lib/jquery.uls/css/jquery.uls.grid.css" rel="stylesheet"/>
+  <link href="../../lib/jquery.uls/css/jquery.uls.lcd.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="tour.css" />
+  <script src="../../lib/jquery-1.10.2.min.js"></script>
+  <script src="../../src/jquery.qlabel.js"></script>
+  <script src="../../lib/jquery.uls/src/jquery.uls.data.js"></script>
+  <script src="../../lib/jquery.uls/src/jquery.uls.data.utils.js"></script>
+  <script src="../../lib/jquery.uls/src/jquery.uls.lcd.js"></script>
+  <script src="../../lib/jquery.uls/src/jquery.uls.languagefilter.js"></script>
+  <script src="../../lib/jquery.uls/src/jquery.uls.regionfilter.js"></script>
+  <script src="../../lib/jquery.uls/src/jquery.uls.core.js"></script>
+  <script src="tour.js"></script>
+ </head>
+ <body>
+  <div>
+   <span class="uls-trigger">Select language</p>
+  </div>
+  <div class="content">
+   <h1><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q1573906">Concert tour</span></h1>
+   <ul>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q119">May</span> 8</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q62">San Francisco</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q99">California</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q119">May</span> 11</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q65">Los Angeles</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q99">California</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q119">May</span> 16</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q8678">Rio de Janeiro</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q155">Brazil</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q119">May</span> 20</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q1486">Buenos Aires</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q414">Argentina</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q119">May</span> 25</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q34647">Johannesburg</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q258">South Africa</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q119">May</span> 30</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q84">London</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q145">United Kingdom</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q120">June</span> 1</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q64">Berlin</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q183">Germany</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q120">June</span> 4</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q1741">Vienna</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q40">Austria</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q120">June</span> 7</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q220">Rome</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q38">Italy</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q120">June</span> 12</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q33935">Tel Aviv</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q801">Israel</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q120">June</span> 19</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q269">Tashkent</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q265">Uzbekistan</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q120">June</span> 24</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q1156">Mumbai</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q668">India</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q120">June</span> 29</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q956">Beijing</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q148">China</span>
+    </li>
+    <li>
+     <span class="date"><span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q121">July</span> 5</span>
+     <span class="qlabel city" its-ta-ident-ref="http://www.wikidata.org/entity/Q3130">Sydney</span>
+     <span class="qlabel country" its-ta-ident-ref="http://www.wikidata.org/entity/Q408">Australia</span>
+    </li>
+   </ul>
+  </div>
+  <footer>
+   <br>
+   <a href="../../index.html">Back to main page</a>
+   <br>
+   <br>
+   Background image source: <a href="http://www.loc.gov/pictures/resource/fsac.1a34655/">Library of Congress</a> 
+   <br>
+   Font: <a href="http://www.google.com/fonts/specimen/Averia+Sans+Libre">Avery Sans Libre</a>
+    by <a href="https://plus.google.com/113095630038455689308/about">Dan Sayers</a>
+   <br>
+   Created by <a href="http://denny.vrandecic.de">Denny Vrandecic</a>,
+   <span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q118">April</span> 2014.
+  </footer>
+ </body>
+</html>

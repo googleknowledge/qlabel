@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Annotation in HTML</title>
+  <link rel="stylesheet" href="qlabel.css" />
+ </head>
+ <body>
+  <h1>Annotation in HTML</h1>
+  <p>
+   Annotation means that your web page contains metadata about its text
+   in the mark up.
+   For qLabel, you can annotate a piece of text with a unique identifier, a URI,
+   that identifies what the given text is about.
+  </p>
+  <p>
+   For example, you might say <i>&quot;I visited Vienna last year.&quot;</i>
+   You could annotate the <i>&quot;I&quot;</i> with a URI for yourself,
+   <i>&quot;Vienna&quot;</i> with a URI for Vienna, Michigan, using e.g. the
+   Wikidata identifier <a href="https://www.wikidata.org/wiki/Q7928351">Q7928351</a>
+   (or <a href="https://www.wikidata.org/wiki/Q7928354">Q7928354</a>, in case you
+   meant the <em>other</em> Vienna, Michigan),
+   and <i>&quot;last year&quot;</i> with an URI for the year.
+   This makes it much easier to understand what this sentence is about
+   (indeed, not only for the machine, as you have seen) and makes the context more explicit.
+  </p>
+  <p>
+   Annotations can be useful well beyond of the service that qLabel offers, e.g. for
+   a better search and for natural language processing, because now it is explicitly
+   stated that this sentence is not about Vienna in Austria or Virginia,
+   nor the Billy Joel song.
+  </p>
+  <p>
+   With qLabel, we annotate the text in order to allow for the correct translation.
+   For example, the Austrian Vienna would be translated to <em>Wien</em> in German,
+   and to <em>B&eacute;cs</em> in Hungary, whereas the song or one of the US cities
+   would remain untranslated.
+  </p>
+  <p>
+   qLabel uses the <code>its-ta-ident-ref</code> attribute from the
+   <a href="http://www.w3.org/TR/its20/">W3C ITS 2.0</a> recommendation.
+   It is unfortunately a horrible attribute name that no one can remember.
+   It stands for <b>I</b>nternationalization <b>T</b>ag <b>S</b>et (ITS)
+   <b>T</b>ext <b>A</b>nnotation (TA)
+   <b>Ident</b>ifier <b>ref</b>erence.
+  </p>
+  <p>
+   Wikipedia has a decent <a href="https://en.wikipedia.org/wiki/Text_annotation">article
+   on annotation</a>.
+  </p>
+ <footer>
+  <hr>
+  See also: <a href="..">qLabel</a> - using annotations for multilingual sites
+  <hr>
+  Created by <a href="http://denny.vrandecic.de">Denny Vrandečić</a>, April 2014.
+ </footer>
+ </body>
+</html>

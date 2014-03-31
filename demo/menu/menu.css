@@ -1,0 +1,38 @@
+body {
+	background: #FFFFFF;
+	background-image: url(menu.jpg);
+	background-size: 100%;
+	font-family: 'Bad Script', cursive;
+	color: #FFDD88;
+	margin: 20px 20px 40px 40px;
+	padding: 0;
+	text-align: left;
+}
+h1 {
+	text-transform: capitalize;
+}
+.content {
+	text-align: left;
+	margin-left: 10%;
+	font-size: 140%;
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+.ingredient {
+	font-size: 90%;
+	text-transform: capitalize;
+}
+.food {
+	font-size: 160%;
+	text-transform: capitalize;
+}
+.price {
+	font-size: 120%;
+	margin-left: 1em;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration : none;
+	color : #FFFFFF;
+}

@@ -1,0 +1,11 @@
+body {
+	background: #fff;
+	font: 100.01% "Fontin Sans", Fontin-Sans, "Myriad Pro", "Lucida Grande", "Lucida Sans Unicode", Lucida, Verdana, Helvetica, sans-serif;
+	color: #000;
+	margin: 20px 20px 40px 40px;
+	padding: 0;
+	text-align: left;
+}
+a {
+	text-decoration : none;
+}

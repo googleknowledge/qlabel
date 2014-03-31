@@ -1,0 +1,52 @@
+body {
+	background: #FFFFFF;
+	background-image: url(football.jpg);
+	background-size: 100%;
+	font-family: 'News Cycle', sans-serif;
+	color: #000000;
+	margin: 20px 20px 40px 40px;
+	padding: 0;
+	text-align: left;
+	text-shadow: white 0.1em 0.1em 0.2em;
+	text-shadow: 0 0 0.2em white, 0 0 0.2em white, 0 0 0.2em white
+	position: relative;
+}
+h1 {
+	text-transform: capitalize;
+	text-align: center;
+	font-size: 200%;
+}
+.content {
+	text-align: center;
+	font-size: 140%;
+	column-count: 2;
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	position: relative;
+	line-height: 130%;
+}
+.city {
+	font-size: 90%;
+	text-transform: capitalize;
+}
+.team {
+	font-size: 180%;
+	font-weight: bold;
+	text-transform: capitalize;
+	margin-left:0.2em;
+	margin-right:0.2em;
+}
+.date {
+	font-size: 120%;
+	margin-left: 1em;
+}
+li {
+	padding-bottom: 2em;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration : none;
+	color : #FFFFFF;
+}

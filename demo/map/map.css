@@ -1,0 +1,16 @@
+body {
+	background: #ddf;
+	font-family: 'Arial';
+	color: black;
+	margin: 20px 20px 40px 40px;
+	padding: 0;
+	text-align: left;
+}
+svg { top:0; left:0; height:90%; width:90% }
+
+.content {
+	text-transform: capitalize;
+	margin-left: 10%;
+	font-size: 120%;
+	text-shadow: white 0.1em 0.1em 0.2em;
+}

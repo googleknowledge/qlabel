@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>qLabel: Usage</title>
+  <link rel="stylesheet" href="qlabel.css" />
+ </head>
+ <body>
+  <h1>qLabel: Usage</h1>
+  <p>
+   This is a step-by-step guide on how to use qLabel.
+  </p>
+  <h2>Step 1: Install qLabel (optional)</h2>
+  <p>
+   Download all necessary JavaScript libraries and upload them to your own web server,
+   if you don't have them yet.
+   Here is the list of JavaScript lobraries you will need:
+   <ul>
+    <li><a href="https://jquery.com">jQuery</a></li>
+    <li><a href="https://code.google.com/p/rdfquery/">rdfquery</a> (optional)</li>
+    <li><a href="../src/jquery.qlabel.js">qLabel</a></li>
+   </ul>
+   You can skip this step by loading the libraries directly from the Web.
+  </p>
+  <h2>Step 2: Load the scripts</h2>
+  <p>
+   In the header of your HTML file, add the following lines in order to load the
+   libraries listed in Step 1:
+  </p>
+  <p><code>
+	  <script src="lib/jquery-1.10.2.min.js"></script>
+   &lt;script src=&quot;http://code.jquery.com/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;<br />
+   &lt;script src=&quot;https://code.google.com/p/rdfquery/source/browse/tags/v1.0/jquery.rdf.js&quot;&gt;&lt;/script&gt;<br />
+   &lt;script src=&quot;http://todo/jquery.qlabel.js&quot;&gt;&lt;/script&gt;
+  </code></p>
+  <p>
+   You can point to the local files instead in case you have set them up in Step 1.
+  </p>
+  <h2>Step 3: Annotate elements with URIs</h2>
+  <p>
+   In your website, annotate the text that refers to an object with the URI for
+   the object. The URI has to be resolvable, provide Linked Data, and contain labels
+   in the languages you are interested in. For more background on this topic,
+   read <a href="http://www.w3.org/DesignIssues/LinkedData.html">Tim Berners-Lee's
+   introduction to Linked Data</a>.
+  </p>
+  <p>
+   Find the URI for the object you are looking for. You can use any URI from the
+   Semantic Web. Two easy searchable and quite comprehensive sources of URIs are
+   <a href="https://www.wikidata.org">Wikidata</a> and
+   <a href="https://freebase.com">Freebase</a>.
+  </p>
+  <p>
+   Once you have the URI, annotate the element with the given text (if there is
+   no element, put the text into one), e.g. like this:
+  </p>
+  <p><code>
+   &lt;span class=&quot;qlabel&quot; its-ta-ident-ref=&quot;http://www.wikidata.org/entity/Q42&quot;&gt;Douglas Adams&lt;/span&gt;
+  </code></p>
+  <p>
+   Do this for all mentions in the text that you want to have translated. The
+   <a href="../demo">demos</a> offer a few examples of structured data that
+   is easy translatable in many languages.
+  </p>
+  <p>
+   (The <code>class</code> is not strictly required for annotation, but is used by
+   qLabel to find all elements that should be translated.)
+  </p>
+  <h2>Step 4: Let the user choose the language</h2>
+  <p>
+   You will need to enable the reader of your site to switch the language.
+  </p>
+  <p>
+   You could tell the user to type the following command into the JavaScript console:
+   <code>$.qLabel.switchLanguage('en')</code>
+  </p>
+  <p>
+   But usually you will provide an element that fires this command based on some user
+   interaction, e.g. a text saying English with an onclick event as for example in the
+   following line of HTML:
+  </p>
+  <p>
+   <code>&lt;div onclick=&quot;$.qLabel.switchLanguage('en')&quot;&gt;English&lt;/div&gt;</code>
+  </p>
+  <p>
+   A much more comprehensive solution is the
+   <a href="https://github.com/wikimedia/jquery.uls">Universal Language Selector</a>,
+   a fantastic widget to let the user choose among literally hundreds of languages.
+   The <a href="../demo">demos</a> use ULS, and you can look in their source code
+   how to use it.
+  </p>
+ <footer>
+  <hr>
+  <a href="..">Back to the main page</a>
+  <hr>
+  Created by <a href="http://denny.vrandecic.de">Denny Vrandečić</a>, April 2014.
+ </footer>
+ </body>
+</html>

@@ -1,0 +1,32 @@
+body {
+	background: #FFFFFF;
+	background-image: url(tour.jpg);
+	background-size: 100%;
+	font-family: 'Averia Sans Libre', cursive;
+	color: #AFA137;
+	margin: 20px 20px 40px 40px;
+	padding: 0;
+	text-align: left;
+}
+h1 {
+	text-transform: capitalize;
+}
+.content {
+	text-align: center;
+	font-size: 200%;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	text-shadow: 0 0 0.2em black, 0 0 0.2em black, 0 0 0.2em black
+}
+.country {
+	font-size: 70%;
+}
+.date {
+	font-size: 70%;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration : none;
+	color : #FFFFFF;
+}

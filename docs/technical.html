@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>qLabel: Technical description</title>
+  <link rel="stylesheet" href="qlabel.css" />
+ </head>
+ <body>
+  <h1>qLabel: Technical description</h1>
+  <p>
+   In the Semantic Web, every object of interest has a URI, a unique identifier.
+   These URIs can be resolved in order to look up more data about the object,
+   for example its label in different languages.
+  </p>
+  <p>
+   This is exactly what qLabel does. These labels are then used to replace the
+   text content of the annotated element, when so requested by the user.
+  </p>
+  <p>
+   One frequent issue with the approach sketched above is that resolving every single
+   URI one after the other simply takes a lot of time and resources.
+   qLabel provides a mechanism to register different loaders, and even three example
+   loaders (for Wikidata, Freebase, and the fallback Semantic Web loader).
+   These loaders can be implemented much more efficiently (e.g. the Wikidata and
+   Freebase loaders cut down the number of web requests by an order of magnitude
+   and more). They also don't require the rdfquery library, so that you don't have
+   to parse RDF/XML in the browser, which could further reduce your footprint.
+  </p>
+  <h2>Documentation</h2>
+  <p>
+   The qLabel library adds the <code>$.qlabel</code> object that has the
+   following public interface.
+  </p>
+  <h3>switchLanguage(lang)</h3>
+  <p>
+   Sets the language to <code>lang</code> (which is a ISO 639 language code)
+   and changes the displayed text on the Website.
+   It will first gather all annotating URIs from all elements that have class
+   <code>qlabel</code>, check if these URIs are already known,
+   load the unknown ones, and once they are all loaded, the text content of the
+   elements changes if a label in the requested language exists.
+   The function returns a <code>promise</code> that will resolve once the
+   language has switched.
+  </p>
+  <h3>getLanguage()</h3>
+  <p>
+   Returns the ISO 639 language code that was set last.
+  </p>
+  <h3>getLabel(URI, lang)</h3>
+  <p>
+   Returns a label for the requested URI and language. If the URI is unknown,
+   or if there is no label for the specified language for the requested URI,
+   <code>undefined</code> is returned.
+  </p>
+  <h3>getLabels(URI)</h3>
+  <p>
+   Returns an object where the keys are the language codes and the values
+   are the labels, for the requested URI. If the URI is unknown,
+   <code>undefined</code> will be returned.
+  </p>
+  <h3>setLabel(URI, lang, label)</h3>
+  <p>
+   Provide qLabel with a Label for the given URI and language. Now, the URI
+   is known (and will not be loaded when calling <code>switchLanguage</code>).
+   <code>setLabel</code> can be used to set the labels manually and not load
+   the labels for every user, and can thus safe resources.
+  </p>
+  <h3>loadLabels(URIs)</h3>
+  <p>
+   The parameter is optional. URIs is a list of URIs for which labels
+   will be loaded. If they are already known, they will not be loaded.
+   If URIs is empty, all annotating URIs on elements with the class
+   <code>qlabel</code> will be loaded.
+   The function returns a <code>promise</code> that will be resolved
+   once the labels are loaded.
+  </p>
+  <h3>getKnownURIs()</h3>
+  <p>
+   Returns an array with all URIs that are known.
+  </p>
+  <h3>setLoader(tester, loader)</h3>
+  <p>
+   Sets a loader. A loader consists of two functions, a <code>tester</code>
+   and a <code>loader</code>.
+   The tester takes a single string and
+   returns a (possibly normalized) string if the loader is able to load the
+   given URI (and returns <code>undefined</code> else).
+   The loader takes an array of strings that the loader will load.
+   The loader should use the <code>setLabel</code> function to set all loaded
+   labels, and return a promise which will be resolved once the loader is finished.
+  </p>
+  <p>
+   There are three loaders already available: a Freebase loader, a Wikidata loader,
+   and a generic Semantic Web loader using Linked Data principles.
+  </p>
+  <h3>setFreebaseKey(key)</h3>
+  <p>
+   Sets the Google Freebase API key to be used when calling Freebase.
+  </p>
+  <h3>getFreebaseKey()</h3>
+  <p>
+   Returns the previously set Google Freebase API key, or an empty string if none is set.
+  </p>
+  <h2>Open tasks and future of qLabel</h2>
+  <p>
+   I am not particularly keen on maintaining qLabel. The library is Open Source and
+   I am happy if someone wants to take over maintenance and further development.
+  </p>
+  <p>
+   A few open issues:
+   <ul>
+    <li>the Wikidata implementation currently only accepts up to 50 URIs at once</li>
+    <li>
+     currently, the <a href="http://any23.org">any23</a> service is used in order
+     to circumvent same origin issues. It is not necessary to use the service every
+     time. It would be smarter to first check if the original destination supports
+     CORS, and only use any23 (or something similar) if it is required.
+    </li>
+    <li>SPARQL is never used, even though it can be much more efficient in specific cases</li>
+    <li>error and exception handling are not implemented</li>
+    <li>language fallback is not implemented</li>
+    <li>there is no particularly strong reason to depend on jQuery (besides rdfquery)</li>
+    <li>rdfquery seems to be unmaintained (but working)</li>
+   </ul>
+  </p>
+ <footer>
+  <hr>
+  <a href="..">Back to the main page</a>
+  <hr>
+  Created by <a href="http://denny.vrandecic.de">Denny Vrandečić</a>, April 2014.
+ </footer>
+ </body>
+</html>
