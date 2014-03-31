@@ -1,3 +1,112 @@
+<!DOCTYPE html>
 <html>
-  <body>qLabel</body>
+ <head>
+  <meta charset="utf-8">
+  <title>qLabel</title>
+  <link rel="stylesheet" href="docs/qlabel.css" />
+  <script src="lib/jquery-1.10.2.min.js"></script>
+  <script src="src/jquery.qlabel.js"></script>
+  <script src="docs/qlabel.js"></script>
+ </head>
+ <body>
+  <h1>qLabel</h1>
+  <p>
+<strong>qLabel</strong> is a JavaScript library that helps you create
+multilingual websites.
+qLabel looks up and displays labels for entities marked up in a Website.
+In the next paragraph, click one of the languages, and you will see the display
+change accordingly.
+  </p>
+  <hr>
+  <p align="center">
+   <span class="langselect qlabel" id="en" its-ta-ident-ref="http://www.wikidata.org/entity/Q1860">English</span> -
+   <span class="langselect qlabel" id="de" its-ta-ident-ref="http://www.wikidata.org/entity/Q188">German</span> -
+   <span class="langselect qlabel" id="uz" its-ta-ident-ref="http://www.wikidata.org/entity/Q9264">Uzbek</span> -
+   <span class="langselect qlabel" id="hr" its-ta-ident-ref="http://www.wikidata.org/entity/Q6654">Croatian</span> -
+   <span class="langselect qlabel" id="zh" its-ta-ident-ref="http://www.wikidata.org/entity/Q7850">Chinese</span> -
+   <span class="langselect qlabel" id="ko" its-ta-ident-ref="http://www.wikidata.org/entity/Q9176">Korean</span> -
+   <span class="langselect qlabel" id="ar" its-ta-ident-ref="http://www.wikidata.org/entity/Q13955">Arabic</span> -
+   <span class="langselect qlabel" id="ja" its-ta-ident-ref="http://www.wikidata.org/entity/Q5287">Japanese</span> -
+   <span class="langselect qlabel" id="hi" its-ta-ident-ref="http://www.wikidata.org/entity/Q1568">Hindi</span> -
+   <span class="langselect qlabel" id="ru" its-ta-ident-ref="http://www.wikidata.org/entity/Q7737">Russian</span>
+  </p>
+  <hr>
+  <h2>How do I use it?</h2>
+  <p>
+    See the <a href="docs/usage.html">usage guide</a>.
+  </p>
+  <p>
+qLabel is really easy to use: you need to load qLabel, a jQuery plug-in,
+annotate all elements to be translated with their identifier, e.g. from Wikidata, like this:
+  </p>
+  <code>
+    &lt;span class=&quot;qlabel&quot; its-ta-ident-ref=&quot;http://www.wikidata.org/entity/Q7553&quot;&gt;translation&lt;/span&gt;
+  </code>
+  <p> 
+This will give you the following result:
+   <span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q7553">translation</span>.
+  </p>
+  <p>
+Admitted, this doesn't look too exciting. But click now again on one of the languages provided above.
+The text here changes, automatically, displaying you the translation in the selected language.
+This allows to easily create specific types of content.
+Take a look at the <a href="#examples">examples</a> below,
+and especially at the source code of the <a href="demo/simple">simple example</a>.
+  </p>
+  <p>
+qLabel is available <a href="src/jquery.qlabel.js">here</a>.
+A more detailed <a href="docs/usage.html">usage guide</a> is available.
+  </p>
+  <h2>What is annotation?</h2>
+  <p>
+Annotations are (often invisible) notes about the content of a website.
+  </p>
+  <p>
+In our case, we annotate text that mentions something with that thing's unique identifier.
+This way, when a text mentions <i>Vienna</i>, we know if the text is speaking about
+<a href="https://en.wikipedia.org/wiki/Vienna">Vienna</a> in Austria or
+<a href="https://en.wikipedia.org/wiki/Vienna,_Virginia">Vienna</a> in Virginia,
+and qLabel will know to display the first one as <i>Wien</i> in German and leave the second as <i>Vienna</i>.
+   </p>
+   <p>
+Annotations can be useful well beyond of the service that qLabel offers, e.g. for a better search.
+You can read <a href="docs/annotation.html">more on annotation here</a>.
+  </p>
+  <h2>How does it work?</h2>
+  <p>
+    See the <a href="docs/technical.html">technical description</a>.
+  </p>
+  <p>
+qLabel uses the identifier in the annotation in order to find the name of the annotated thing in the requested language and then displays that name.
+  </p>
+  <p>
+qLabel does not translate the name from one language to the other.
+Instead the author of the website explicitly disambiguates what they mean, and qLabel looks up the name of that on the Web.
+Thus, qLabel is completely different than a service like <a href="https://translate.google.com">Google Translate</a>.
+  </p>
+  <p>
+qLabel uses web standards in order to figure out the names in the different languages.
+The <a href="docs/technical.html">technical description</a> offers more details.
+  </p>
+  <h2>Examples</h2><a name="examples" />
+  <p>
+   Click on <i>Select language</i> on the top left of the page, then select a language, and see
+   the content of the page change (The language selector widget is Wikimedia's
+   <a href="https://github.com/wikimedia/jquery.uls">awesome ULS</a>).
+   <ul>
+    <li><a href="demo/tour">Tour dates</a></li>
+    <li><a href="demo/menu">Menu</a></li>
+    <li><a href="demo/football">International sport schedule</a></li>
+    <li><a href="demo/map">SVG map</a></li>
+    <li><a href="demo/simple">Simple example</a></li>
+   </ul>
+  </p>
+ <footer>
+  <hr>
+  Created by <a href="http://denny.vrandecic.de">Denny Vrandečić</a>,
+  <span class="qlabel" its-ta-ident-ref="http://www.wikidata.org/entity/Q118">April</span> 2014.
+  <br>
+  Disclaimer: qLabel is not an official Google product. qLabel is an Open Source project.
+ </footer>
+ </body>
 </html>
