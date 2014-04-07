@@ -17,6 +17,7 @@
 ;(function ($, window, document, undefined) {
 
 var language = null;
+var className = 'qlabel';
 var labels = {};
 var loaders = {};
 loaders.count = 0;
@@ -42,7 +43,7 @@ var setLanguage = function(lang) {
 };
 
 var display = function() {
-    $('.qlabel').each(function(index, element) {
+    $('.' + className).each(function(index, element) {
       var id = getURI(element);
       if (id !== undefined) {
           var label = getLabel(getURI(element), getLanguage());
@@ -64,7 +65,7 @@ var getURI = function(element) {
 };
 
 var gatherURIs = function() {
-    return $('.qlabel').map(function() {
+    return $('.' + className).map(function() {
       return getURI(this);
     }).get();
 };
@@ -214,6 +215,14 @@ var getLanguage = function() {
     return language;
 };
 
+var setClassName = function(clsName) {
+    className = clsName;
+};
+
+var getClassName = function() {
+    return className;
+};
+
 var setLabel = function(URI, lang, label) {
     checkURI(URI);
     checkLanguage(lang);
@@ -296,6 +305,8 @@ var setLoader = function(tester, loader) {
 $.qLabel = {
   switchLanguage: switchLanguage,
   getLanguage: getLanguage,
+  setClassName: setClassName,
+  getClassName: getClassName,
   setLabel: setLabel,
   getLabel: getLabel,
   getLabels: getLabels,
@@ -313,6 +324,8 @@ setLoader(wikidataTester, wikidataLoader);
 // public interface documentation
 // switchLanguage(lang) - set the language and switch the display
 // getLanguage() - get the currently set language
+// setClassName(clsName) - set the classname used to find the elements
+// getClassName() - get the classname used to find the elements
 // getLabel(URI, lang) - return the label of the URI in the given language
 // getLabels(URI) - return all labels for a URI
 // setLabel(URI, lang, label) - set a specific label in the given language
