@@ -152,7 +152,7 @@ var freebaseLoader = function(URIs) {
       'filter': '(any id:' + URIs.join(' id:') + ')',
       'output': '(/type/object/name)',
       // TODO only for these languages
-      'lang': 'en,es,fr,de,it,pt,zh,ja,ko,ru,sv,fi,da,nl,el,ro,tr,hu,th,pl,cs,id,bg,uk,ca,eu,no,sl,sk,hr,sr,ar,hi,vi,fa,ga,iw,lv,lt,fil',
+      'lang': 'en,es,fr,de,it,pt,zh,ja,ko,ru,sv,fi,da,nl,el,ro,tr,hu,th,pl,cs,id,bg,uk,ca,eu,no,sl,sk,hr,sr,ar,hi,vi,fa,ga,iw,lv,lt,fil'
     };
     if (getFreebaseKey() !== '') {
         param.key = getFreebaseKey();
