@@ -14,6 +14,7 @@ h1 {
 .content {
 	text-align: left;
 	margin-left: 10%;
+	margin-right: 10%;
 	font-size: 140%;
 	text-shadow: black 0.1em 0.1em 0.2em;
 }
