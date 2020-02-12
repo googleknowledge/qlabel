@@ -1,0 +1,22 @@
+body {
+	background: #FFFFFF;
+	background-image: url(valentine.jpg);
+	background-size: 100%;
+	color: #ffd3fc;
+	margin: 20px 20px 40px 40px;
+	padding: 0;
+	text-align: left;
+	font-family: cursive;
+}
+.content {
+	text-align: center;
+	margin-left: 10%;
+	margin-right: 10%;
+	text-shadow: black 0.1em 0.1em 0.1em;
+	font-size: 200%;
+	font-weight: 600;
+}
+a {
+	text-decoration : none;
+	color : #FFFFFF;
+}
